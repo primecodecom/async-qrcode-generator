@@ -26,7 +26,7 @@ npm install --save @primecode/async-qrcode
 Require the module `@primecode/async-qrcode`
 
 ```javascript
-const { QrCode, Ecl, Types } =  require('@primecode/async-qrcode');
+const { QrCode, Types, Ecl } = require('@primecode/async-qrcode');
 
 QrCode.generate({
   data: "string to transform",
@@ -36,19 +36,31 @@ QrCode.generate({
   minVersion: 1,
   maxVersion: 40,
   mask: 0,
-  boostEcl: false
+  boostEcl: false,
+  color: '#000',
+  background:'#fff'
 }).then((svg) => {
   console.log(svg) //SVG String
 }).catch((e) => {
   console.log(e);
 });
+
+QrCode.generate({
+  data: "another string to transform",
+  type: Types.SQUARE,
+}).then((svg) => {
+  console.log(svg) //SVG String
+}).catch((e) => {
+  console.log(e);
+});
+
 ```
 
 ### Typescript
 Import the module `@primecode/async-qrcode`
 
 ```javascript
-const { QrCode, Ecl, Types } =  require('@primecode/async-qrcode');
+import { QrCode, Ecl, Types } from '@primecode/async-qrcode';
 
 // With promises
 QrCode.generate({
@@ -59,7 +71,9 @@ QrCode.generate({
   minVersion: 1,
   maxVersion: 40,
   mask: 0,
-  boostEcl: false
+  boostEcl: false,
+  color: '#000',
+  background:'#fff'
 })
 .then(url => {
   console.log(url)
@@ -67,9 +81,73 @@ QrCode.generate({
 .catch(err => {
   console.error(err)
 });
+
+QrCode.generate({
+  data: "another string to transform",
+  type: Types.SQUARE,
+}).then((svg) => {
+  console.log(svg) //SVG String
+}).catch((e) => {
+  console.log(e);
+});
 ```
 
+## Error correction level
+Error correction capability allows to successfully scan a QR Code even if the symbol is dirty or damaged.
+Four levels are available to choose according to the operating environment.
+
+Higher levels offer a better error resistance but reduce the symbol's capacity.<br>
+If the chances that the QR Code symbol may be corrupted are low (for example if it is showed through a monitor)
+is possible to safely use a low error level such as `Low` or `Medium`.
+
+Possible levels are shown below:
+
+| Level            | Error resistance |
+|------------------|:----------------:|
+| **L** (Low)      | **~7%**          |
+| **M** (Medium)   | **~15%**         |
+| **Q** (Quartile) | **~25%**         |
+| **H** (High)     | **~30%**         |
+
+The percentage indicates the maximum amount of damaged surface after which the symbol becomes unreadable.
+
 ## Styling
+
+```javascript
+{
+  data: "string to transform",
+  type: Types.SQUARE,
+}
+```
+<br>
+<img src="https://github.com/primecodecom/files/raw/master/SQUARE.png" width="120" height="120">
+
+
+### Server API
+#### `generate([options])`
+See [generate](#generate-options).
+Generate QR Code svg.
+
+##### `options`
+See [QR Code options](#qr-code-options).
+
+##### `returns`
+Type: `Promise<String>`
+
+```javascript
+{
+        data: string, //Text to encode
+        border: number, // Border separator in svg image
+        type: number, // Types.SQUARE | Types.ROUND | Types.CIRCLE
+        ecl: number, // Ecl.LOW | Ecl.MEDIUM | Ecl.QUARTILE | Ecl.HIGH,
+        minVersion: number, // Value between 1 - 40: Increase the error correction level
+        maxVersion: number, // Value between 1 - 40: Increase the error correction level
+        mask: number, // User can specify mask pattern manually, value between 0 - 7
+        boostEcl: boolean, // User can specify absolute error correction level, or allow the library to boost it if it doesn't increase the version number
+        color: string, // Dot color in image
+        background: string // SVG bacground color
+}
+```
 
 ## Credits
 Software is based on "QRCode c++ library" - Project Nayuki [https://www.nayuki.io/page/qr-code-generator-library](https://www.nayuki.io/page/qr-code-generator-library).
