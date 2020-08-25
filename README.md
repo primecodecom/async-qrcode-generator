@@ -114,6 +114,8 @@ The percentage indicates the maximum amount of damaged surface after which the s
 
 ## Styling
 
+### SQUARE
+
 ```javascript
 {
   data: "string to transform",
@@ -121,6 +123,8 @@ The percentage indicates the maximum amount of damaged surface after which the s
 }
 ```
 <img src="https://github.com/primecodecom/files/raw/master/SQUARE.png" width="120" height="120">
+
+### ROUND
 
 ```javascript
 {
@@ -130,6 +134,8 @@ The percentage indicates the maximum amount of damaged surface after which the s
 ```
 <img src="https://github.com/primecodecom/files/raw/master/ROUND.png" width="120" height="120">
 
+### CIRCLE
+
 ```javascript
 {
   data: "string to transform",
@@ -137,6 +143,18 @@ The percentage indicates the maximum amount of damaged surface after which the s
 }
 ```
 <img src="https://github.com/primecodecom/files/raw/master/CIRCLE.png" width="120" height="120">
+
+### COLORED
+
+```javascript
+{
+  data: "string to transform",
+  color: '#c11616',
+  background:'#d2e0f1',
+  type: Types.ROUND,
+}
+```
+<img src="https://github.com/primecodecom/files/raw/master/COLORED.png" width="120" height="120">
 
 ### API
 #### `generate([options])`
