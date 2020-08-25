@@ -10,6 +10,7 @@ Most modern macOS, Windows and Linux systems running Node.js v10+ do not require
 - [Installation](#installation)
 - [Usage](#usage)
 - [Styling](#styling)
+- [API](#api)
 - [Credits](#credits)
 
 
@@ -119,15 +120,30 @@ The percentage indicates the maximum amount of damaged surface after which the s
   type: Types.SQUARE,
 }
 ```
-<br>
 <img src="https://github.com/primecodecom/files/raw/master/SQUARE.png" width="120" height="120">
 
+```javascript
+{
+  data: "string to transform",
+  type: Types.ROUND,
+}
+```
+<img src="https://github.com/primecodecom/files/raw/master/ROUND.png" width="120" height="120">
+
+```javascript
+{
+  data: "string to transform",
+  type: Types.CIRCLE,
+}
+```
+<img src="https://github.com/primecodecom/files/raw/master/CIRCLE.png" width="120" height="120">
 
 ### API
 #### `generate([options])`
-See [generate](#options).
 Generate QR Code svg.
+<br>
 
+See [generate](#options).
 ##### `options`
 ```javascript
 {
