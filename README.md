@@ -22,6 +22,53 @@ npm install --save @primecode/async-qrcode
 
 ## Usage
 
+### NodeJS
+Require the module `@primecode/async-qrcode`
+
+```javascript
+const { QrCode, Ecl, Types } =  require('@primecode/async-qrcode');
+
+QrCode.generate({
+  data: "string to transform",
+  border: 2,
+  type: Types.ROUND,
+  ecl: Ecl.MEDIUM,
+  minVersion: 1,
+  maxVersion: 40,
+  mask: 0,
+  boostEcl: false
+}).then((svg) => {
+  console.log(svg) //SVG String
+}).catch((e) => {
+  console.log(e);
+});
+```
+
+### Typescript
+Import the module `@primecode/async-qrcode`
+
+```javascript
+const { QrCode, Ecl, Types } =  require('@primecode/async-qrcode');
+
+// With promises
+QrCode.generate({
+  data: "string to transform",
+  border: 2,
+  type: Types.ROUND,
+  ecl: Ecl.MEDIUM,
+  minVersion: 1,
+  maxVersion: 40,
+  mask: 0,
+  boostEcl: false
+})
+.then(url => {
+  console.log(url)
+})
+.catch(err => {
+  console.error(err)
+});
+```
+
 ## Styling
 
 ## Credits

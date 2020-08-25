@@ -2,7 +2,7 @@
 
 const { readFileSync } = require('fs');
 const { strictEqual } = require('assert');
-const { QrCode, Types } = require('../index');
+const { QrCode, Types, Ecl } = require('../index');
 
 
 describe("QR CODE GENERATE", () => {
@@ -101,6 +101,20 @@ describe("QR CODE GENERATE", () => {
             color: 'white'
         }).then((svg) => {
             const content = readFileSync("./test/outputs/custom6.svg").toString();
+            strictEqual(content.replace(/\n|\r|\s/g, ""), svg.replace(/\n|\r|\s/g, ""));
+            done();
+        }).catch((e) => {
+            done(e);
+        });
+    });
+
+    it("should generate custom qr code v7 - mask = 5, ecl = 3", (done) => {
+        QrCode.generate({
+            data: 'qrcode-v7',
+            mask: 5,
+            ecl: Ecl.HIGH
+        }).then((svg) => {
+            const content = readFileSync("./test/outputs/custom7.svg").toString();
             strictEqual(content.replace(/\n|\r|\s/g, ""), svg.replace(/\n|\r|\s/g, ""));
             done();
         }).catch((e) => {
