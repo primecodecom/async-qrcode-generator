@@ -1,0 +1,24 @@
+{
+  "name": "@primecode/async-qrcode",
+  "version": "1.0.0",
+  "description": "Async QR code generator C++ implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primecodecom/async-qrcode-generator.git"
+  },
+  "keywords": [
+    "async",
+    "qrcode",
+    "generator"
+  ],
+  "author": "Alexander Makedonski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/primecodecom/async-qrcode-generator/issues"
+  },
+  "homepage": "https://github.com/primecodecom/async-qrcode-generator#readme"
+}
