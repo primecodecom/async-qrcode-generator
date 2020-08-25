@@ -123,17 +123,12 @@ The percentage indicates the maximum amount of damaged surface after which the s
 <img src="https://github.com/primecodecom/files/raw/master/SQUARE.png" width="120" height="120">
 
 
-### Server API
+### API
 #### `generate([options])`
-See [generate](#generate-options).
+See [generate](#options).
 Generate QR Code svg.
 
 ##### `options`
-See [QR Code options](#qr-code-options).
-
-##### `returns`
-Type: `Promise<String>`
-
 ```javascript
 {
         data: string, //Text to encode
@@ -148,6 +143,10 @@ Type: `Promise<String>`
         background: string // SVG bacground color
 }
 ```
+
+##### `returns`
+Type: `Promise<String>`
+
 
 ## Credits
 Software is based on "QRCode c++ library" - Project Nayuki [https://www.nayuki.io/page/qr-code-generator-library](https://www.nayuki.io/page/qr-code-generator-library).
