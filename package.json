@@ -1,6 +1,6 @@
 {
   "name": "@primecode/async-qrcode",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Async QR code generator, C++ implementation",
   "main": "index.js",
   "scripts": {

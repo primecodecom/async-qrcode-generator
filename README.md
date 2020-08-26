@@ -200,11 +200,11 @@ Type: `Promise<String>`
 ## Webpack
 ```javascript
 
- externals: [
-      {
-        '@primecode/async-qrcode': 'commonjs @primecode/async-qrcode'
-      }
-    ]
+externals: [
+  {
+    '@primecode/async-qrcode': 'commonjs @primecode/async-qrcode'
+  }
+]
 
 ```
 
