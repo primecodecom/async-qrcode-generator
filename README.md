@@ -182,20 +182,6 @@ See [generate](#options).
 ##### `returns`
 
 Type: `Promise<String>`
-```javascript
-{
-        data: string, //Text to encode
-        border: number, // Border separator in svg image
-        type: number, // Types.SQUARE | Types.ROUND | Types.CIRCLE
-        ecl: number, // Ecl.LOW | Ecl.MEDIUM | Ecl.QUARTILE | Ecl.HIGH,
-        minVersion: number, // Value between 1 - 40: Increase the error correction level
-        maxVersion: number, // Value between 1 - 40: Increase the error correction level
-        mask: number, // User can specify mask pattern manually, value between 0 - 7
-        boostEcl: boolean, // User can specify absolute error correction level, or allow the library to boost it if it doesn't increase the version number
-        color: string, // Dot color in image
-        background: string // SVG bacground color
-}
-```
 
 ## Webpack
 ```javascript
